@@ -2,13 +2,15 @@ import {Component, Input} from '@angular/core';
 import {MatButtonModule} from "@angular/material/button";
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
 import {faGoogle, faFacebookF, faTwitter} from "@fortawesome/free-brands-svg-icons";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-providers',
   standalone: true,
   imports: [
     MatButtonModule,
-    FaIconComponent
+    FaIconComponent,
+    RouterLink
   ],
   templateUrl: './providers.component.html',
   styleUrl: './providers.component.sass'

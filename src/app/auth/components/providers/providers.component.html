@@ -1,12 +1,37 @@
-<span>- Or sign @if(authType === 'login'){in}@else if(authType === 'register'){up} with -</span>
+<span>- Or sign @if (authType === 'login') {
+  in
+} @else if (authType === 'register') {
+  up
+} with -</span>
 <div class="providers_box">
-  <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-    <fa-icon [icon]="faGoogle"  size="2x"/>
+  <button mat-fab
+          color="primary"
+          aria-label="Example icon button with a delete icon">
+    <fa-icon [icon]="faGoogle"
+             size="2x" />
   </button>
-  <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-    <fa-icon [icon]="faFacebookF"  size="2x"/>
+  <button mat-fab
+          color="primary"
+          aria-label="Example icon button with a delete icon">
+    <fa-icon [icon]="faFacebookF"
+             size="2x" />
   </button>
-  <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-    <fa-icon [icon]="faTwitter"  size="2x"/>
+  <button mat-fab
+          color="primary"
+          aria-label="Example icon button with a delete icon">
+    <fa-icon [icon]="faTwitter"
+             size="2x" />
   </button>
+</div>
+
+<div class="change_form_box">
+  @if (authType === 'login') {
+    <span>Don't have an account?
+      <a routerLink="/register">Sign Up</a>
+    </span>
+  } @else if (authType === 'register') {
+    <span>Do you have an account?
+      <a routerLink="/login">Sign In</a>
+    </span>
+  }
 </div>
