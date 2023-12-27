@@ -1,0 +1,44 @@
+<h3>Create your new Account</h3>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput [formControl]="registerForm.controls.email">
+    @if (registerForm.controls.email.hasError('email') && !registerForm.controls.email.hasError('required')) {
+      <mat-error>Please enter a valid email address</mat-error>
+    }
+    @if (registerForm.controls.email.hasError('required')) {
+      <mat-error>Email is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Password</mat-label>
+    <input type="password" matInput [formControl]="registerForm.controls.password">
+    @if (registerForm.controls.password.hasError('required')) {
+      <mat-error>Password is <strong>required</strong></mat-error>
+    }
+    @if (registerForm.controls.password.hasError('minLength')) {
+      <mat-error>At least 8 characters long</mat-error>
+    }
+    @if (registerForm.controls.password.hasError('pattern')) {
+      <mat-error>{{showPasswordErrors(registerForm.controls.password.value)}}</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Confirm password</mat-label>
+    <input type="password" matInput [formControl]="registerForm.controls.confirmPassword">
+    @if (registerForm.controls.confirmPassword.hasError('required')) {
+      <mat-error>Password is <strong>required</strong></mat-error>
+    }
+    @if (registerForm.controls.confirmPassword.hasError('minLength')) {
+      <mat-error>At least 8 characters long</mat-error>
+    }
+    @if (registerForm.controls.confirmPassword.hasError('pattern')) {
+      <mat-error>{{showPasswordErrors(registerForm.controls.confirmPassword.value)}}</mat-error>
+    }
+    @if (registerForm.hasError('PasswordNoMatch')) {
+      <mat-error>Password no match</mat-error>
+    }
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Sign In</button>
+
+</form>

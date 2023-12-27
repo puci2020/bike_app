@@ -16,12 +16,6 @@
     @if (loginForm.controls.password.hasError('required')) {
       <mat-error>Password is <strong>required</strong></mat-error>
     }
-    @if (loginForm.controls.password.hasError('minLength')) {
-      <mat-error>At least 8 characters long</mat-error>
-    }
-    @if (loginForm.controls.password.hasError('pattern')) {
-      <mat-error>{{showPasswordErrors(loginForm.controls.password.value)}}</mat-error>
-    }
   </mat-form-field>
   <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Sign In</button>
 

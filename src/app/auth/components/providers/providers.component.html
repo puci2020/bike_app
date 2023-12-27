@@ -1,12 +1,12 @@
-<span>- Or sign in with -</span>
+<span>- Or sign @if(authType === 'login'){in}@else if(authType === 'register'){up} with -</span>
 <div class="providers_box">
   <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-    <img src="./assets/icons/google.png" alt="google"/>
+    <fa-icon [icon]="faGoogle"  size="2x"/>
   </button>
   <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-    <img src="./assets/icons/facebook.png" alt="facebook"/>
+    <fa-icon [icon]="faFacebookF"  size="2x"/>
   </button>
   <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-    <img src="./assets/icons/twitter.png" alt="twitter"/>
+    <fa-icon [icon]="faTwitter"  size="2x"/>
   </button>
 </div>

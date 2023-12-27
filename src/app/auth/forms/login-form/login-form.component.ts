@@ -7,8 +7,7 @@ type LoginFormGroup = FormGroup<{
   email: FormControl<string>,
   password: FormControl<string>
 }>
-export const StrongPasswordRegx: RegExp =
-  /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
+
 @Component({
   selector: 'app-login-form',
   standalone: true,
@@ -32,25 +31,11 @@ export class LoginFormComponent {
     password: new FormControl(
       '',
       {
-        validators: [Validators.required, Validators.minLength(8), Validators.pattern(StrongPasswordRegx)],
+        validators: [Validators.required],
         nonNullable: true
       },
     ),
   })
-
-  showPasswordErrors(passwordValue: string): string{
-    if (!passwordValue) return '';
-    if (passwordValue.match('^(?=.*[A-Z])'))
-      return 'At least uppercase letter'
-    else if (passwordValue.match('(?=.*[a-z])'))
-      return 'At least one lowercase letter'
-    else if (passwordValue.match('(.*[0-9].*)'))
-      return 'At least one digit'
-    else if (passwordValue.match('.{8,}'))
-      return 'At least 8 characters long'
-
-    return ''
-  }
 
   onSubmit(){
     console.log(this.loginForm)
