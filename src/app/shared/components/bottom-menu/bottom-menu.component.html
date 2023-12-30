@@ -1,15 +1,19 @@
 <mat-button-toggle-group name="bottom-menu"
 
                          aria-label="Bottom menu">
-    <mat-button-toggle value="motorcycles">
+    <mat-button-toggle routerLink="/home" routerLinkActive="mat-button-toggle-checked">
         <fa-icon [icon]="faHome"
                  size="lg" />
     </mat-button-toggle>
-    <mat-button-toggle value="motorcycles">
+    <mat-button-toggle routerLink="/motorcycles" routerLinkActive="mat-button-toggle-checked">
         <fa-icon [icon]="faMotorcycle"
                  size="lg" />
     </mat-button-toggle>
     <mat-button-toggle value="motorcycles">
+        <fa-icon [icon]="faGasPump"
+                 size="lg" />
+    </mat-button-toggle>
+    <mat-button-toggle>
         <fa-icon [icon]="faUser"
                  size="lg" />
     </mat-button-toggle>

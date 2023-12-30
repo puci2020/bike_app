@@ -1,0 +1,21 @@
+<mat-toolbar>
+    <div class="toolbar">
+        <div class="toolbar-item">
+            @if (backButton) {
+                <button mat-icon-button
+                        aria-label="Back"
+                        (click)="back()">
+                    <fa-icon [icon]="faArrowLeft"
+                    />
+                </button>
+            }
+        </div>
+        <div class="toolbar-item">
+            {{ title }}
+        </div>
+        <div class="toolbar-item">
+            <ng-content></ng-content>
+        </div>
+    </div>
+
+</mat-toolbar>
