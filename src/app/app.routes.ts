@@ -19,6 +19,6 @@ export const routes: Routes = [
     {
         path: 'motorcycles',
         loadComponent: () => import('./pages/motorcycles/motorcycles.component').then(m => m.MotorcyclesComponent),
-        title: "Motorcycles"
+        title: "My Motorcycles"
     }
 ];
