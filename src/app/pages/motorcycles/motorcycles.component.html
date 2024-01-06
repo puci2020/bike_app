@@ -1,4 +1,10 @@
-<app-toolbar [title]="routeTitle ?? 'Motorcycles'"></app-toolbar>
+<app-toolbar [title]="routeTitle ?? 'Motorcycles'">
+    <button mat-icon-button
+            aria-label="Add motorcycle">
+        <fa-icon [icon]="faPlus"
+        />
+    </button>
+</app-toolbar>
 
 <p>motorcycles works!</p>
 
