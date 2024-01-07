@@ -1,4 +1,6 @@
 import {Routes} from '@angular/router';
+import {CreateComponent} from "./motorcycles/components/create/create.component";
+import {MotorcyclesComponent} from "./pages/motorcycles/motorcycles.component";
 
 export const routes: Routes = [
     {
@@ -18,7 +20,21 @@ export const routes: Routes = [
     },
     {
         path: 'motorcycles',
-        loadComponent: () => import('./pages/motorcycles/motorcycles.component').then(m => m.MotorcyclesComponent),
-        title: "My Motorcycles"
-    }
+        component: MotorcyclesComponent,
+        // loadComponent: () => import('./pages/motorcycles/motorcycles.component').then(m => m.MotorcyclesComponent),
+        title: "My Motorcycles",
+        children: [
+            {
+                path: 'create',
+                component: CreateComponent,
+                title: 'Add Motorcycle'
+            },
+        ]
+    },
+    // {
+    //     path: 'create',
+    //     // component: CreateComponent,
+    //     loadComponent: () => import('./motorcycles/components/create/create.component').then(m => m.CreateComponent),
+    //     title: 'Add Motorcycle'
+    // },
 ];

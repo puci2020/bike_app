@@ -1,7 +1,7 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {BottomMenuComponent} from "../../shared/components/bottom-menu/bottom-menu.component";
 import {ToolbarComponent} from "../../shared/components/toolbar/toolbar.component";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, RouterLink} from "@angular/router";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
 import {MatButtonModule} from "@angular/material/button";
@@ -14,6 +14,7 @@ import {MatButtonModule} from "@angular/material/button";
         ToolbarComponent,
         FaIconComponent,
         MatButtonModule,
+        RouterLink,
     ],
   templateUrl: './motorcycles.component.html',
   styleUrl: './motorcycles.component.sass'
